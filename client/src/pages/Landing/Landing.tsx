@@ -83,7 +83,11 @@ export function Landing() {
                 </Link>
               </div>
             </div>
-            <div className={styles.aboutImgPlaceholder}>App screenshot placeholder</div>
+            <img
+              src="/img.png"
+              alt="StudyPartner app screenshot"
+              className={styles.aboutImg}
+            />
           </div>
         </div>
       </section>

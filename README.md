@@ -2,7 +2,7 @@
 
 A session-authenticated single-page web application for college students to manage academic tasks across multiple subjects.
 
-Built as a Westcliff University capstone project (Project 3).
+Built as a Westcliff University project (Project 3).
 
 ## Live Demo
 

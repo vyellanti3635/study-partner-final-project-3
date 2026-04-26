@@ -164,16 +164,13 @@
   line-height: t.$line-height-loose;
 }
 
-.aboutImgPlaceholder {
-  height: 180px;
+.aboutImg {
+  width: 100%;
+  height: auto;
+  display: block;
   border: 1px solid t.$color-border;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: t.$color-secondary;
-  font-size: t.$font-size-sm;
-  background: t.$color-surface;
   border-radius: t.$radius-base;
+  background: t.$color-surface;
 }
 
 // ---- Footer ----
