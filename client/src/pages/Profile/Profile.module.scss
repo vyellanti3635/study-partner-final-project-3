@@ -1,0 +1,47 @@
+@use '../../styles/tokens' as t;
+@use '../../styles/mixins' as m;
+
+.profileLayout {
+  max-width: 640px;
+  margin: 0 auto;
+
+  @include m.mobile {
+    padding: 0 t.$space-2;
+  }
+}
+
+.card {
+  border: 1px solid t.$color-border;
+  border-radius: t.$radius-lg;
+  background: t.$color-background;
+  overflow: hidden;
+  margin-bottom: t.$space-6;
+}
+
+.cardAccent {
+  height: 3px;
+  background: t.$color-primary;
+}
+
+.cardBody {
+  padding: t.$space-6;
+
+  @include m.mobile {
+    padding: t.$space-4;
+  }
+}
+
+.sectionTitle {
+  font-size: t.$font-size-lg;
+  font-weight: t.$font-weight-semi;
+  color: t.$color-primary;
+  margin-bottom: t.$space-4;
+  padding-bottom: t.$space-3;
+  border-bottom: 1px solid t.$color-border-light;
+}
+
+.fieldNote {
+  font-size: t.$font-size-xs;
+  color: t.$color-text-muted;
+  margin-top: t.$space-1;
+}

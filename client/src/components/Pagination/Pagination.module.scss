@@ -1,0 +1,19 @@
+@use '../../styles/tokens' as t;
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: t.$space-2;
+  margin-top: t.$space-4;
+}
+
+.showing {
+  font-size: t.$font-size-sm;
+  color: t.$color-text-muted;
+}
+
+.buttons {
+  margin-left: auto;
+  display: flex;
+  gap: t.$space-1;
+}

@@ -1,0 +1,186 @@
+@use '../../styles/tokens' as t;
+@use '../../styles/mixins' as m;
+
+// ---- Hero ----
+.hero {
+  padding: t.$space-16 t.$space-8;
+  text-align: center;
+  border-bottom: 1px solid t.$color-border;
+  background-color: t.$color-surface;
+
+  @include m.mobile {
+    padding: t.$space-10 t.$space-4;
+  }
+}
+
+.heroLogoPlaceholder {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto t.$space-4;
+  border: 1px solid t.$color-border;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: t.$font-size-xl;
+  font-weight: t.$font-weight-bold;
+  color: t.$color-primary;
+  background: t.$color-background;
+}
+
+.heroTitle {
+  font-size: t.$font-size-3xl;
+  font-weight: t.$font-weight-bold;
+  line-height: t.$line-height-tight;
+  margin-bottom: t.$space-3;
+  color: t.$color-primary;
+
+  @include m.mobile {
+    font-size: t.$font-size-2xl;
+  }
+}
+
+.heroSubtitle {
+  font-size: t.$font-size-lg;
+  color: t.$color-secondary;
+  margin-bottom: t.$space-6;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: t.$line-height-loose;
+
+  @include m.mobile {
+    font-size: t.$font-size-base;
+  }
+}
+
+.ctaRow {
+  display: flex;
+  gap: t.$space-3;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+// ---- Feature strip ----
+.featureStrip {
+  padding: t.$space-12 0;
+  border-bottom: 1px solid t.$color-border;
+
+  @include m.mobile {
+    padding: t.$space-8 0;
+  }
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: t.$space-6;
+
+  @include m.tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include m.mobile {
+    grid-template-columns: 1fr;
+    gap: t.$space-4;
+  }
+}
+
+.featureCard {
+  padding: t.$space-6;
+  border: 1px solid t.$color-border;
+  border-radius: t.$radius-lg;
+  background: t.$color-background;
+}
+
+.featureIconPlaceholder {
+  width: 40px;
+  height: 40px;
+  margin-bottom: t.$space-3;
+  border: 1px solid t.$color-border;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: t.$font-size-base;
+  font-weight: t.$font-weight-bold;
+  color: t.$color-secondary;
+  background: t.$color-surface;
+}
+
+.featureLabel {
+  font-size: t.$font-size-base;
+  font-weight: t.$font-weight-semi;
+  margin-bottom: t.$space-2;
+  color: t.$color-primary;
+}
+
+.featureDesc {
+  font-size: t.$font-size-sm;
+  color: t.$color-secondary;
+  margin: 0;
+  line-height: t.$line-height-loose;
+}
+
+// ---- About section ----
+.aboutSection {
+  padding: t.$space-12 0;
+  border-bottom: 1px solid t.$color-border;
+
+  @include m.mobile {
+    padding: t.$space-8 0;
+  }
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: t.$space-8;
+  align-items: center;
+
+  @include m.mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.aboutSectionLabel {
+  font-size: t.$font-size-xs;
+  font-weight: t.$font-weight-bold;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: t.$color-secondary;
+  margin-bottom: t.$space-2;
+}
+
+.aboutTitle {
+  font-size: t.$font-size-xl;
+  font-weight: t.$font-weight-bold;
+  line-height: t.$line-height-tight;
+  margin-bottom: t.$space-3;
+  color: t.$color-primary;
+}
+
+.aboutText {
+  color: t.$color-secondary;
+  font-size: t.$font-size-base;
+  line-height: t.$line-height-loose;
+}
+
+.aboutImgPlaceholder {
+  height: 180px;
+  border: 1px solid t.$color-border;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: t.$color-secondary;
+  font-size: t.$font-size-sm;
+  background: t.$color-surface;
+  border-radius: t.$radius-base;
+}
+
+// ---- Footer ----
+.footer {
+  padding: t.$space-6 0;
+  text-align: center;
+  font-size: t.$font-size-sm;
+  color: t.$color-secondary;
+  border-top: 1px solid t.$color-border;
+}

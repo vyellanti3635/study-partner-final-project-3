@@ -1,0 +1,132 @@
+@use '../../styles/tokens' as t;
+@use '../../styles/mixins' as m;
+
+// Two-column layout: dark sidebar + form panel
+.page {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  min-height: 100vh;
+
+  @include m.mobile {
+    grid-template-columns: 1fr;
+  }
+
+  @include m.tablet {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sidebar {
+  background-color: t.$color-primary;
+  color: #ffffff;
+  padding: t.$space-12 t.$space-8;
+  display: flex;
+  flex-direction: column;
+
+  @include m.mobile {
+    display: none;
+  }
+
+  @include m.tablet {
+    display: none;
+  }
+}
+
+.sidebarLogoPlaceholder {
+  width: 64px;
+  height: 64px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: t.$font-size-xl;
+  font-weight: t.$font-weight-bold;
+  color: #ffffff;
+  margin-bottom: t.$space-6;
+}
+
+.sidebarTitle {
+  font-size: t.$font-size-2xl;
+  font-weight: t.$font-weight-bold;
+  color: #ffffff;
+  line-height: t.$line-height-tight;
+  margin-bottom: t.$space-3;
+}
+
+.sidebarText {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: t.$space-6;
+  font-size: t.$font-size-sm;
+  line-height: t.$line-height-loose;
+}
+
+.sidebarList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: t.$space-3;
+
+  li {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: t.$font-size-sm;
+    line-height: t.$line-height-base;
+
+    &::before {
+      content: '+ ';
+      font-weight: t.$font-weight-bold;
+    }
+  }
+}
+
+// Form panel — center-column on tablet/mobile
+.formPanel {
+  padding: t.$space-12 t.$space-8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include m.mobile {
+    padding: t.$space-8 t.$space-4;
+  }
+
+  @include m.tablet {
+    padding: t.$space-10 t.$space-6;
+    max-width: 540px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+.formTitle {
+  font-size: t.$font-size-2xl;
+  font-weight: t.$font-weight-bold;
+  line-height: t.$line-height-tight;
+  margin-bottom: t.$space-1;
+  color: t.$color-primary;
+}
+
+.formSubtitle {
+  color: t.$color-secondary;
+  font-size: t.$font-size-sm;
+  margin-bottom: t.$space-6;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid t.$color-border;
+  margin: t.$space-4 0;
+}
+
+.loginLink {
+  text-align: center;
+  font-size: t.$font-size-sm;
+  color: t.$color-secondary;
+  margin-top: t.$space-4;
+
+  a {
+    color: t.$color-primary;
+    font-weight: t.$font-weight-semi;
+  }
+}

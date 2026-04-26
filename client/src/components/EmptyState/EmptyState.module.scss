@@ -1,0 +1,26 @@
+@use '../../styles/tokens' as t;
+
+.container {
+  padding: t.$space-12 t.$space-8;
+  text-align: center;
+  border: 1px dashed t.$color-border;
+  border-radius: t.$radius-lg;
+  background-color: t.$color-surface;
+}
+
+.title {
+  font-size: t.$font-size-lg;
+  font-weight: t.$font-weight-medium;
+  color: t.$color-text;
+  margin-bottom: t.$space-2;
+}
+
+.description {
+  font-size: t.$font-size-sm;
+  color: t.$color-text-muted;
+  margin-bottom: t.$space-4;
+}
+
+.action {
+  margin-top: t.$space-4;
+}

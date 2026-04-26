@@ -1,0 +1,143 @@
+@use '../../styles/tokens' as t;
+@use '../../styles/mixins' as m;
+
+.welcomeBar {
+  background: t.$color-surface;
+  border-bottom: 1px solid t.$color-border;
+  padding: t.$space-3 t.$space-6;
+  font-size: t.$font-size-base;
+  line-height: t.$line-height-base;
+
+  @include m.mobile {
+    padding: t.$space-3 t.$space-4;
+    font-size: t.$font-size-sm;
+  }
+}
+
+.welcomeName {
+  font-weight: t.$font-weight-semi;
+}
+
+.welcomeSub {
+  color: t.$color-text-muted;
+}
+
+// ---- Stat cards ----
+// Bootstrap's row g-3 handles the 2x2 tablet and 1x4 desktop grid.
+// On mobile, col-6 gives 2 across; no override needed.
+.statCard {
+  border: 1px solid t.$color-border;
+  border-radius: t.$radius-lg;
+  padding: t.$space-4;
+  background: t.$color-background;
+  text-align: center;
+}
+
+.statNum {
+  font-size: t.$font-size-2xl;
+  font-weight: t.$font-weight-bold;
+  color: t.$color-primary;
+  line-height: t.$line-height-tight;
+}
+
+.statLabel {
+  font-size: t.$font-size-sm;
+  color: t.$color-text-muted;
+  margin-top: t.$space-1;
+}
+
+// ---- Section headings ----
+.sectionLabel {
+  font-size: t.$font-size-xs;
+  font-weight: t.$font-weight-bold;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: t.$color-text-muted;
+  margin-bottom: t.$space-3;
+}
+
+// ---- Due Today table ----
+.dueTodayTable {
+  font-size: t.$font-size-sm;
+  border: 1px solid t.$color-border;
+  border-radius: t.$radius-base;
+  overflow: hidden;
+
+  th {
+    font-weight: t.$font-weight-medium;
+    background: t.$color-surface;
+    white-space: nowrap;
+    font-size: t.$font-size-xs;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: t.$color-text-muted;
+  }
+
+  td {
+    vertical-align: middle;
+  }
+}
+
+.strikethrough {
+  text-decoration: line-through;
+  color: t.$color-text-muted;
+}
+
+.viewAllLink {
+  font-size: t.$font-size-sm;
+  color: t.$color-secondary;
+  text-decoration: none;
+
+  &:hover {
+    color: t.$color-primary;
+    text-decoration: underline;
+  }
+}
+
+// ---- Card panel (progress + upcoming) ----
+.card {
+  border: 1px solid t.$color-border;
+  border-radius: t.$radius-lg;
+  padding: t.$space-4;
+  background: t.$color-background;
+}
+
+.progressItem {
+  margin-bottom: t.$space-4;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: t.$space-1;
+  font-size: t.$font-size-sm;
+}
+
+.upcomingItem {
+  padding-bottom: t.$space-3;
+  margin-bottom: t.$space-3;
+  border-bottom: 1px solid t.$color-border-light;
+
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+}
+
+.upcomingTitle {
+  font-weight: t.$font-weight-medium;
+  font-size: t.$font-size-sm;
+  display: block;
+  color: t.$color-text;
+}
+
+.upcomingMeta {
+  font-size: t.$font-size-xs;
+  color: t.$color-text-muted;
+  margin-top: t.$space-1;
+}

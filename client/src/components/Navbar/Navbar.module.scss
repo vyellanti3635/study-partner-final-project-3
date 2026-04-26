@@ -1,0 +1,92 @@
+@use '../../styles/tokens' as t;
+
+.navbar {
+  background-color: t.$color-background;
+  border-bottom: 1px solid t.$color-border;
+  padding: t.$space-3 0;
+}
+
+.brand {
+  font-size: t.$font-size-lg;
+  font-weight: t.$font-weight-bold;
+  color: t.$color-primary;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+
+  &:hover {
+    color: t.$color-primary;
+  }
+}
+
+.navLink {
+  color: t.$color-secondary;
+  font-size: t.$font-size-sm;
+  font-weight: t.$font-weight-medium;
+  text-decoration: none;
+  padding: t.$space-2 t.$space-3;
+  border-radius: t.$radius-base;
+
+  &:hover {
+    color: t.$color-primary;
+  }
+
+  &.active {
+    color: t.$color-primary;
+    font-weight: t.$font-weight-semi;
+  }
+}
+
+.btnOutline {
+  color: t.$color-primary;
+  border: 1px solid t.$color-primary;
+  padding: t.$space-2 t.$space-4;
+  border-radius: t.$radius-base;
+  font-size: t.$font-size-sm;
+  font-weight: t.$font-weight-medium;
+  text-decoration: none;
+  background: transparent;
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+
+  &:hover {
+    background-color: t.$color-surface;
+    color: t.$color-primary;
+  }
+}
+
+.btnFill {
+  color: #ffffff;
+  border: 1px solid t.$color-primary;
+  padding: t.$space-2 t.$space-4;
+  border-radius: t.$radius-base;
+  font-size: t.$font-size-sm;
+  font-weight: t.$font-weight-medium;
+  text-decoration: none;
+  background: t.$color-primary;
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+
+  &:hover {
+    background-color: t.$color-primary-hover;
+    color: #ffffff;
+  }
+}
+
+.logoutBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: t.$color-secondary;
+  font-size: t.$font-size-sm;
+  font-weight: t.$font-weight-medium;
+  padding: t.$space-2 t.$space-3;
+  border-radius: t.$radius-base;
+  min-height: 38px;
+
+  &:hover {
+    color: t.$color-primary;
+    background-color: t.$color-surface;
+  }
+}

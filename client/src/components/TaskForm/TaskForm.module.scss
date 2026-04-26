@@ -1,0 +1,46 @@
+@use '../../styles/tokens' as t;
+@use '../../styles/mixins' as m;
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: t.$space-1;
+  margin-bottom: t.$space-1;
+}
+
+.label {
+  font-size: t.$font-size-sm;
+  font-weight: t.$font-weight-medium;
+  color: t.$color-text;
+}
+
+.required {
+  color: t.$color-error;
+}
+
+.actions {
+  display: flex;
+  gap: t.$space-3;
+  margin-top: t.$space-5;
+  flex-wrap: wrap;
+
+  @include m.mobile {
+    flex-direction: column;
+
+    button {
+      width: 100%;
+    }
+  }
+}
+
+// New subject inline input row
+.newSubjectRow {
+  display: flex;
+  gap: t.$space-2;
+  margin-top: t.$space-2;
+  align-items: flex-start;
+}
+
+.newSubjectInput {
+  flex: 1;
+}

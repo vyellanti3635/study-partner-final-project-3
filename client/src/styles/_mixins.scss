@@ -1,0 +1,70 @@
+// Responsive breakpoint mixins
+// Aligned with Bootstrap 5 breakpoints:
+//   xs:  < 576px  (default — mobile-first)
+//   sm:  >= 576px
+//   md:  >= 768px
+//   lg:  >= 992px
+//   xl:  >= 1200px
+//   xxl: >= 1400px
+
+// Mobile-only: < 576px
+@mixin mobile {
+  @media (max-width: 575.98px) {
+    @content;
+  }
+}
+
+// Tablet range: 576px – 991px
+@mixin tablet {
+  @media (min-width: 576px) and (max-width: 991.98px) {
+    @content;
+  }
+}
+
+// Tablet and up: >= 576px
+@mixin tablet-up {
+  @media (min-width: 576px) {
+    @content;
+  }
+}
+
+// Narrow viewport (phone): <= 480px — used for hamburger trigger
+@mixin mobile-narrow {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+// Desktop: >= 992px
+@mixin desktop {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+// Desktop large: >= 1200px
+@mixin desktop-lg {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+// Truncate single line of text
+@mixin truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// Visually-hidden but accessible
+@mixin visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}

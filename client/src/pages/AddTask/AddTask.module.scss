@@ -1,0 +1,30 @@
+@use '../../styles/tokens' as t;
+@use '../../styles/mixins' as m;
+
+.breadcrumb {
+  font-size: t.$font-size-sm;
+  color: t.$color-secondary;
+}
+
+.cardAccent {
+  height: 3px;
+  background: t.$color-primary;
+  margin: -1px -1px 0;
+  border-radius: t.$radius-lg t.$radius-lg 0 0;
+}
+
+.formCard {
+  border: 1px solid t.$color-border;
+  border-radius: t.$radius-lg;
+  background: t.$color-background;
+  overflow: hidden;
+  max-width: 720px;
+}
+
+.formBody {
+  padding: t.$space-6;
+
+  @include m.mobile {
+    padding: t.$space-4;
+  }
+}

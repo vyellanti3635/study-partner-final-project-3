@@ -1,0 +1,52 @@
+@use '../../styles/tokens' as t;
+@use '../../styles/mixins' as m;
+
+.pageHeader {
+  margin-bottom: t.$space-4;
+}
+
+// ---- Filter tabs ----
+.filterTabs {
+  gap: t.$space-1;
+  flex-wrap: wrap;
+}
+
+.sortRow {
+  font-size: t.$font-size-sm;
+}
+
+// ---- Task table ----
+.taskTable {
+  border: 1px solid t.$color-border;
+  border-radius: t.$radius-base;
+  overflow: hidden;
+
+  th {
+    font-weight: t.$font-weight-medium;
+    background: t.$color-surface;
+    font-size: t.$font-size-xs;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: t.$color-text-muted;
+    white-space: nowrap;
+  }
+
+  td {
+    vertical-align: middle;
+  }
+}
+
+.taskTitle {
+  font-weight: t.$font-weight-medium;
+  color: t.$color-text;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+  color: t.$color-text-muted;
+}
+
+// ---- Mobile card-list transform for task rows ----
+// On very narrow screens, the table can scroll horizontally within table-responsive.
+// The table-responsive wrapper already handles this in Bootstrap.
+// No custom card transform needed here — horizontal scroll is acceptable per spec.

@@ -1,0 +1,121 @@
+// Global styles — import order matters:
+// 1. Our design tokens (custom variables)
+// 2. Our Bootstrap variable overrides (must come BEFORE Bootstrap)
+// 3. Bootstrap itself
+// 4. Our global base styles
+
+@import 'tokens';
+@import 'variables';
+@import 'bootstrap/scss/bootstrap';
+
+// ---- Base reset / box-model ----
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: auto; // no fancy smooth scroll
+}
+
+body {
+  margin: 0;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: 1.55;
+  color: #111111;
+  background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// ---- Minimum tap targets (WCAG 2.5.5 / Apple HIG: >= 44px) ----
+button,
+[type='button'],
+[type='submit'],
+[type='reset'],
+.btn {
+  min-height: 44px;
+}
+
+input:not([type='checkbox']):not([type='radio']),
+select,
+textarea {
+  min-height: 44px;
+}
+
+// Checkboxes and radio buttons keep their natural size
+input[type='checkbox'],
+input[type='radio'] {
+  min-height: unset;
+}
+
+// ---- Typography rhythm ----
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 0.5em;
+  color: #111111;
+}
+
+p {
+  margin-bottom: 1rem;
+  line-height: 1.55;
+}
+
+// ---- Form elements ----
+label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #111111;
+  margin-bottom: 4px;
+}
+
+// ---- Global form error/alert styles ----
+.form-error {
+  color: #b91c1c;
+  font-size: 0.8125rem;
+  margin-top: 4px;
+  display: block;
+}
+
+.form-alert {
+  background-color: #fef2f2;
+  border: 1px solid #b91c1c;
+  color: #b91c1c;
+  padding: 10px 14px;
+  border-radius: 5px;
+  margin-bottom: 16px;
+  font-size: 0.875rem;
+}
+
+// ---- Utility overrides ----
+// Remove Bootstrap's blue focus ring — keep focus visible via outline
+:focus-visible {
+  outline: 2px solid #111111;
+  outline-offset: 2px;
+}
+
+// Keep Bootstrap's focus-visible approach but no blue glow
+.btn:focus-visible,
+.form-control:focus-visible,
+.form-select:focus-visible {
+  box-shadow: none;
+  border-color: #111111;
+  outline: 2px solid #111111;
+  outline-offset: 1px;
+}
+
+// ---- Table consistent padding ----
+.table > :not(caption) > * > * {
+  padding: 0.5rem 0.75rem;
+}
+
+// ---- Strikethrough for completed tasks (shared) ----
+.task-completed {
+  text-decoration: line-through;
+  color: #666666;
+}

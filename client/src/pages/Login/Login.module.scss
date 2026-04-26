@@ -1,0 +1,84 @@
+@use '../../styles/tokens' as t;
+@use '../../styles/mixins' as m;
+
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: t.$color-surface;
+  padding: t.$space-6 t.$space-4;
+}
+
+.card {
+  width: 100%;
+  max-width: 440px;
+  background: t.$color-background;
+  border: 1px solid t.$color-border;
+  border-radius: t.$radius-lg;
+  padding: t.$space-8;
+  overflow: hidden;
+
+  @include m.mobile {
+    padding: t.$space-6 t.$space-4;
+  }
+}
+
+.cardAccentBar {
+  height: 3px;
+  background-color: t.$color-primary;
+  margin: -#{t.$space-8} -#{t.$space-8} t.$space-6;
+
+  @include m.mobile {
+    margin: -#{t.$space-6} -#{t.$space-4} t.$space-5;
+  }
+}
+
+.logoPlaceholder {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto t.$space-3;
+  border: 1px solid t.$color-border;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: t.$font-size-lg;
+  font-weight: t.$font-weight-bold;
+  color: t.$color-primary;
+  background: t.$color-surface;
+}
+
+.cardHeader {
+  text-align: center;
+  margin-bottom: t.$space-6;
+}
+
+.cardTitle {
+  font-size: t.$font-size-xl;
+  font-weight: t.$font-weight-bold;
+  line-height: t.$line-height-tight;
+  color: t.$color-primary;
+  margin-bottom: t.$space-1;
+}
+
+.cardSubtitle {
+  font-size: t.$font-size-sm;
+  color: t.$color-secondary;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid t.$color-border;
+  margin: t.$space-4 0;
+}
+
+.signupLink {
+  text-align: center;
+  font-size: t.$font-size-sm;
+  color: t.$color-secondary;
+
+  a {
+    color: t.$color-primary;
+    font-weight: t.$font-weight-semi;
+  }
+}
