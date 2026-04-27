@@ -100,34 +100,6 @@ NODE_ENV=production LOCAL_HTTP_TEST=1 npm start
 
 The `LOCAL_HTTP_TEST=1` flag drops the `Secure` cookie attribute so sessions work over HTTP. Do NOT set this on Render (HTTPS is live there).
 
-## Project Structure
-
-```
-project3-study-partner/
-├── client/                     React + Vite frontend
-│   ├── public/icons/           PWA icons (192, 512, 512 maskable)
-│   ├── src/
-│   │   ├── api/                Axios client + endpoint modules
-│   │   ├── auth/               AuthContext, ProtectedRoute, PublicOnlyRoute
-│   │   ├── components/         FormField, Toast, Pagination, TaskForm, Navbar, EmptyState
-│   │   ├── hooks/              useDebounce, useToast, useTasks, useSubjects
-│   │   ├── pages/              Landing, Signup, Login, Dashboard, MyTasks, AddTask, EditTask, Profile
-│   │   ├── schemas/            Shared Zod validators (mirrored on server)
-│   │   └── styles/             Design tokens, mixins, Bootstrap overrides
-│   └── vite.config.ts          PWA + dev proxy config
-├── server/                     Express + Mongoose backend
-│   └── src/
-│       ├── config/             env, db
-│       ├── controllers/        auth, tasks, subjects, user
-│       ├── middleware/         requireAuth, validate, rateLimit, session, errorHandler, notFound
-│       ├── models/             User, Task, Subject
-│       ├── routes/             auth, tasks, subjects, user
-│       └── schemas/            Shared Zod validators (mirrored on client)
-├── docs/wireframes/            Design references (archived from initial proposal)
-├── .kiro/specs/study-partner/  Spec docs (requirements, design, tasks)
-└── package.json                Root workspace
-```
-
 ## API
 
 All responses follow the envelope `{ success, data, error, meta }`. Authenticated routes require a session cookie (`sp.sid`).
